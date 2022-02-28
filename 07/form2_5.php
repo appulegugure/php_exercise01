@@ -9,12 +9,12 @@ $post_msg = '';
 $obj = '';
 $items = ['バッグ', '靴', '時計', 'ネックレス', 'ピアス'];
 
- // コードを追記
+// コードを追記
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $tel = $_POST['tel'];
     $email = $_POST['email'];
-    $obj = $_POST['buysection'];
+    $obj = $_POST['buyselect'];
 
     if (empty($name)) {
         $err_msgs[] = '氏名を入力して下さい';
@@ -27,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email)) {
         $err_msgs[] = 'メールアドレスを入力して下さい';
     }
-    
-    if (empty($err_msgs)){
+
+    if (empty($err_msgs)) {
         header("Location: confirm.php?item=${obj}");
         exit;
     }
@@ -48,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h3>個人情報を入力してください</h3>
 
-    <?php if ($err_msgs): ?>
+    <?php if ($err_msgs) : ?>
         <h2>エラーメッセージ</h2>
         <ul>
-            <?php foreach ($err_msgs as $err_msg): ?>
-                <li><?=$err_msg?></li>
+            <?php foreach ($err_msgs as $err_msg) : ?>
+                <li><?= $err_msg ?></li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
@@ -60,21 +60,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form action="" method="post">
 
         <div>
-            <label for="">氏名</label><br>
-            <input type="text" name="name" value=<?=$name?>>
+            <label for="input1">氏名</label><br>
+            <input type="text" name="name" id="input1" value=<?= $name ?>>
         </div>
         <div>
-            <label for="">電話番号</label><br>
-            <input type="text" name="tel" value=<?=$tel?>>
+            <label for="input2">電話番号</label><br>
+            <input type="text" name="tel" id="input2" value=<?= $tel ?>>
         </div>
         <div>
-            <label for="">メールアドレス</label><br>
-            <input type="text" name="email" value=<?=$email?>>
+            <label for="input3">メールアドレス</label><br>
+            <input type="text" name="email" id="input3" value=<?= $email ?>>
         </div>
         <h3>購入するものを選択して下さい</h3>
-        <select name="buysection">
-            <?php foreach($items as $value):?>
-                <option value=<?=$value?>><?=$value?></option>
+        <select name="buyselect">
+            <?php foreach ($items as $value) : ?>
+                <option value=<?= $value ?>><?= $value ?></option>
             <?php endforeach; ?>
         </select>
         <br>
