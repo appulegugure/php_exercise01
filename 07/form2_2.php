@@ -31,8 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <h1><?= $msg ?></h1>
-    <h1><?= $result ?></h1>
+    <?php if (!empty($msg)): ?>
+        <h1><?= $msg ?></h1>
+    <?php endif; ?>
+    <?php if (!empty($result)): ?>
+        <h1><?= $result ?></h1>
+    <?php endif; ?>
     <ul>
         <?php if (!empty($err_msg)) : ?>
             <li><?= $err_msg ?></li>
