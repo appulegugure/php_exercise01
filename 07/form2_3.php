@@ -3,21 +3,21 @@
 $score = '';
 $msg = '点数を入力して下さい';
 $err_msg = '';
+$confirm_url = 'judge_ment.php?msg=';
+$param = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $score = $_POST['score'];
 
     if (empty($_POST['score'])) {
         $err_msg = '点数が入力されていません';
-    }
-
-    if ($score == "") {
-        $msg = '点数を入力して下さい';
     } elseif ($score >= 60) {
-        header('Location: judge_ment.php?msg=合格');
+        $param = '合格';
+        header("Location: ${confirm_url}${param}");
         exit;
     } else {
-        header('Location: judge_ment.php?msg=不合格');
+        $param = '不合格';
+        header("Location: ${confirm_url}${param}");
         exit;
     }
 }

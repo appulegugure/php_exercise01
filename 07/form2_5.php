@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/function_file.php';
+
 $name = '';
 $tel = '';
 $email = '';
@@ -11,10 +13,10 @@ $items = ['バッグ', '靴', '時計', 'ネックレス', 'ピアス'];
 
 // コードを追記
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $tel = $_POST['tel'];
-    $email = $_POST['email'];
-    $obj = $_POST['buyselect'];
+    $name = h($_POST['name']);
+    $tel = h($_POST['tel']);
+    $email = h($_POST['email']);
+    $obj = h($_POST['buyselect']);
 
     if (empty($name)) {
         $err_msgs[] = '氏名を入力して下さい';

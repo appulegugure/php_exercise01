@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>希望する美容師のランクを選んでください</h1>
     <form action="" method="post">
         <select name="stylist">
-            <option value=<?= $stylists['スタイリスト'] ?>>スタイリスト</option>
-            <option value=<?= $stylists['ハイスタイリスト'] ?>>ハイスタイリスト</option>
-            <option value=<?= $stylists['トップスタイリスト'] ?>>トップスタイリスト</option>
+            <?php foreach ($stylists as $key => $value) : ?>
+                <option value=<?= $stylists[$key] ?>><?= $key ?></option>
+            <?php endforeach; ?>
         </select>
         <br>
         <input type="submit" value="送信">

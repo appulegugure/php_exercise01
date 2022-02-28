@@ -3,19 +3,18 @@
 $score = '';
 $msg = '点数を入力して下さい';
 $err_msg = '';
+$result = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $score = $_POST['score'];
     if (empty($score)) {
         $err_msg = '点数が入力されていません。';
-    }
-
-    if ($score == "") {
-        $msg = '点数を入力して下さい';
     } elseif ($score >= 60) {
-        $msg = '合格';
+        $result = '合格';
+        $msg = '';
     } else {
-        $msg = '不合格';
+        $result = '不合格';
+        $msg = '';
     }
 }
 
@@ -33,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <h1><?= $msg ?></h1>
+    <h1><?= $result ?></h1>
     <ul>
         <?php if (!empty($err_msg)) : ?>
             <li><?= $err_msg ?></li>
