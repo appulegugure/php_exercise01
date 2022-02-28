@@ -1,7 +1,7 @@
 <?php
 $msg = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $msg = '私は' . $_POST['old'] . '歳です';
+    $msg = '私は' . $_POST['age'] . '歳です';
 }
 
 ?>
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form action="" method="POST">
         <div>
             <label for="nennrei">年齢</label><br>
-            <input type="text" name="old" id="nennrei">
+            <input type="text" name="age" id="nennrei">
         </div>
         <div>
             <input type="submit" value="送信">

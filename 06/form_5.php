@@ -36,16 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form action="" method="post">
         <div>
-            <label for="one1">1つめの数字</label><br>
-            <input type="text" name="one" id="one1">
+            <label for="one">1つめの数字</label><br>
+            <input type="text" name="one" id="one">
         </div>
         <div>
-            <label for="two1">2つめの数字</label><br>
-            <input type="number" name="two" id="two1">
+            <label for="two">2つめの数字</label><br>
+            <input type="number" name="two" id="two">
         </div>
         <div>
-            <label for="three1">3つめの数字</label><br>
-            <input type="number" name="three" id="three1">
+            <label for="three">3つめの数字</label><br>
+            <input type="number" name="three" id="three">
         </div>
         <input type="submit" value="送信">
     </form>
