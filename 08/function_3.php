@@ -1,6 +1,6 @@
 <?php
 
-function self_introduction($skills, $likes) 
+function self_introduction($skills, $likes)
 {
     $skills_quantities = count($skills);
     $likes_quantities = count($likes);
