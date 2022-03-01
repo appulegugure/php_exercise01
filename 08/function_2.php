@@ -2,11 +2,7 @@
 
 function calc_cal($total_meals)
 {
-    $arry_sum = 0;
-    foreach ($total_meals as $key => $value) {
-        $arry_sum += $value;
-    }
-    return $arry_sum;
+    return array_sum(array_values($total_meals));
 }
 
 $yesterday_meal = [
