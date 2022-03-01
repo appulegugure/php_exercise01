@@ -2,7 +2,7 @@
 
 function calc_cal($total_meals)
 {
-    return array_sum(array_values($total_meals));
+    return array_sum($total_meals);
 }
 
 $yesterday_meal = [
